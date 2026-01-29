@@ -30,6 +30,7 @@ public static partial class ResultExtensions
         {
             ResultStatus.Ok => result is Result ? Results.Ok() : Results.Ok(result.GetValue()),
             ResultStatus.Created => Results.Created("", result.GetValue()),
+            ResultStatus.Accepted => Results.Accepted("", result.GetValue()),
             ResultStatus.NoContent => Results.NoContent(),
             ResultStatus.NotFound => NotFoundEntity(result),
             ResultStatus.Unauthorized => UnAuthorized(result),
